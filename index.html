@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Mikhail (Mike) Dereviannykh: research scientist and founder working on neural rendering, world models and GPU performance.">
+<meta property="og:title" content="Mike Dereviannykh">
+<meta property="og:description" content="Neural rendering, world models and AI-driven rendering optimization. Eurographics 2025 Best Paper Honorable Mention.">
+<meta property="og:image" content="https://www.mishok43.com/images/me.jpg">
+<meta property="og:url" content="https://www.mishok43.com/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://www.mishok43.com/">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Mike Dereviannykh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: two columns. A sticky identity rail on the left (portrait, name, thesis, contact),
+   a dense right column of sections read like a CV. Collapses to one column on phones. */
+:root{
+  --bg:#f6f6f5;
+  --surface:#ffffff;
+  --ink:#18181a;
+  --muted:#66625d;
+  --rule:#e4e1dd;
+  --accent:#c2500a;
+  --accent-soft:#fcece0;
+  --warm:#c2500a;
+  --f-display:"Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-body:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --step-0:0.95rem; --step-1:1.08rem; --step-2:1.35rem; --step-3:2.1rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121212; --surface:#1a1918; --ink:#ecebe9; --muted:#a29d97; --rule:#2c2a28;
+    --accent:#ff9447; --accent-soft:#3a2416; --warm:#ff9447; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121212; --surface:#1a1918; --ink:#ecebe9; --muted:#a29d97; --rule:#2c2a28;
+  --accent:#ff9447; --accent-soft:#3a2416; --warm:#ff9447; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:var(--step-0);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none;text-underline-offset:3px}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,48px);padding-block:clamp(28px,5vw,64px);
+  display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(28px,5vw,72px)}
+@media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* Left rail */
+.rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 32px);align-self:start;display:flex;flex-direction:column;gap:20px}
+@media (max-width:860px){.rail{position:static}}
+.portrait{width:128px;aspect-ratio:1;max-width:100%;border-radius:50%;overflow:hidden;background:var(--accent-soft);margin:0}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb{margin:0;border-radius:6px;overflow:hidden;background:var(--accent-soft);border:1px solid var(--rule);aspect-ratio:16/10;max-width:100%}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.row.media{grid-template-columns:76px minmax(0,1fr) 190px}
+@media (max-width:640px){.row.media{grid-template-columns:76px minmax(0,1fr)}.row.media .thumb{grid-column:2;max-width:320px}}
+.feature .thumb{aspect-ratio:21/9}
+h1{font-family:var(--f-display);font-weight:700;font-size:var(--step-3);line-height:1.05;letter-spacing:-0.02em;margin:0;text-wrap:balance}
+h1 small{display:block;font-size:0.95rem;font-weight:500;letter-spacing:0;color:var(--muted);margin-top:8px}
+.thesis{font-family:var(--f-display);font-size:var(--step-1);font-weight:500;line-height:1.4;margin:0;text-wrap:pretty}
+.contact{display:flex;flex-direction:column;gap:6px;font-family:var(--f-mono);font-size:0.8rem}
+.contact .email{color:var(--ink);user-select:all}
+.links{display:flex;flex-wrap:wrap;gap:6px 14px}
+.now{border-top:1px solid var(--rule);padding-top:16px;font-family:var(--f-display);font-size:0.86rem;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.now strong{color:var(--ink);font-weight:600}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--warm);margin-right:7px;vertical-align:1px}
+
+/* Main column */
+main{display:flex;flex-direction:column;gap:clamp(40px,5vw,56px);min-width:0}
+.intro p{margin:0 0 12px;font-size:var(--step-1);max-width:66ch;text-wrap:pretty}
+.intro p:last-child{margin-bottom:0}
+
+h2{font-family:var(--f-mono);font-weight:500;font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin:0 0 16px;
+  display:flex;align-items:center;gap:12px}
+h2::after{content:"";flex:1;height:1px;background:var(--rule)}
+
+/* Featured venture */
+.feature{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:clamp(18px,3vw,28px);display:flex;flex-direction:column;gap:14px}
+.feature .eyebrow{font-family:var(--f-mono);font-size:0.72rem;color:var(--accent);letter-spacing:0.04em}
+.feature h3{font-family:var(--f-display);font-size:var(--step-2);font-weight:700;margin:0;line-height:1.2;text-wrap:balance}
+.feature p{margin:0;max-width:68ch}
+.feature .authors{font-family:var(--f-display);font-size:0.86rem;color:var(--muted)}
+.feature .authors .me{color:var(--ink);font-weight:600}
+.nums{display:flex;flex-wrap:wrap;gap:8px}
+.num{font-family:var(--f-mono);font-size:0.78rem;background:var(--accent-soft);color:var(--ink);padding:5px 9px;border-radius:4px;font-variant-numeric:tabular-nums}
+.num b{color:var(--accent);font-weight:500}
+.feature .actions{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--f-display);font-size:0.88rem;font-weight:500}
+
+/* Lists (publications, experience) */
+.list{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--rule)}
+.row:first-child{border-top:0;padding-top:0}
+.row .when{font-family:var(--f-mono);font-size:0.76rem;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.row h4{font-family:var(--f-display);font-weight:600;font-size:var(--step-1);margin:0 0 3px;line-height:1.3;text-wrap:balance}
+.row .meta{font-family:var(--f-display);font-size:0.84rem;color:var(--muted);margin:0 0 6px}
+.row .meta .me{color:var(--ink);font-weight:600}
+.row p{margin:0;max-width:68ch}
+.row .lk{font-family:var(--f-display);font-size:0.84rem;font-weight:500;margin-top:6px;display:flex;flex-wrap:wrap;gap:4px 14px}
+.badge{display:inline-block;font-family:var(--f-mono);font-size:0.68rem;letter-spacing:0.03em;padding:2px 7px;border-radius:3px;border:1px solid var(--warm);color:var(--warm);margin-left:6px;vertical-align:2px;white-space:nowrap}
+@media (max-width:480px){.row,.row.media{grid-template-columns:minmax(0,1fr);gap:6px}.row.media .thumb{grid-column:1}}
+
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,48px)}
+@media (max-width:720px){.two{grid-template-columns:minmax(0,1fr)}}
+.compact{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.compact li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px}
+.compact .when{font-family:var(--f-mono);font-size:0.74rem;color:var(--muted);padding-top:2px;font-variant-numeric:tabular-nums}
+.people{max-width:68ch;margin:0;color:var(--muted)}
+.people span{color:var(--ink)}
+footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:16px;font-family:var(--f-mono);font-size:0.72rem;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <aside class="rail">
+    <figure class="portrait"><img src="images/me.jpg" data-fallback="https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72umA3Sz6hMImUWwHpgilaEVRFpUVIDiPcKyCEIzxvD06_9HSFAlb-q0WRBeLxaD35DtQ6lvPG6nZ0IjbEwxfVWWLLq-9836Bz_Jrlc2iOxzYNO0nF_X0TLxPHgEvIgPHfybo2xgk07dAUFBYt71863EmUTdLdCYErrUy7VaEzJ7xFOZKsIasCC1eBwylRCNHIo9nTCAf5jgdKAXti7paRxpr41AnSsoc1xvb6A4epM=w1280" alt="Mikhail Dereviannykh"></figure>
+    <h1>Mikhail Dereviannykh<small>Mike · Neural rendering, world models, GPU performance</small></h1>
+    <p class="thesis">I make neural rendering and world models scalable and fast enough to run in real time.</p>
+    <div class="contact">
+      <span class="email">devmishok@gmail.com</span>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/mikhail-dereviannykh-784003155/">LinkedIn</a>
+        <a href="https://github.com/mishok43">GitHub</a>
+        <a href="https://x.com/Mishok2000">X</a>
+        <a href="https://bsky.app/profile/mishok43.bsky.social">Bluesky</a>
+      </div>
+    </div>
+    <div class="now">
+      <div><span class="dot"></span><strong>Now</strong></div>
+      <div>Physical AI &amp; world models at an early-stage company (stealth), since Oct 2026</div>
+      <div>Based in Karlsruhe, Germany</div>
+    </div>
+  </aside>
+
+  <main>
+    <section class="intro" aria-label="About">
+      <p>I work where simulation research meets real products. My first company was WellDone Games, a small mobile game studio. After that I spent four years shipping real-time rendering for DCS World, a flight simulator played by hundreds of thousands of people, and then did my PhD research at KIT on neural rendering (thesis defense still ahead), where my work earned a Best Paper Honorable Mention at Eurographics 2025.</p>
+      <p>Since then I've done research at Meta Reality Labs and Stability AI on generative video and world models, and founded Acc3D around AI-driven rendering optimization for game engines. I feel most excited about ideas that leave the paper and survive real constraints: a few milliseconds per frame, a fixed GPU budget, a team that has to ship next month.</p>
+    </section>
+
+    <section aria-labelledby="h-featured">
+      <h2 id="h-featured">Featured</h2>
+      <article class="feature">
+        <figure class="thumb"><img src="images/semantok.jpg" data-fallback="https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72ugIIQRuan035gqb-prrrKSC_xeBRH-umVJRurR0L-5tPYPlYeA8OOsQN2ZmmxLkC1ZRPx19JtwLkSKH5SSRRDDYKAtPZ1htJgj_MRpPcQAIC9gw3pocAPDBtmPzB6f69V12y4OGCMIAMVkI4oV1I8UFtWDPwd443Vq_neMCh776fTWKq1tSsMYUik-oiWPuql8BWDVpLq8yhUJf_J0MFFvamQi5AqmB1B_S2wqRb0=w1280" alt="SemanTok: video generation from semantic tokens" loading="lazy"></figure>
+        <span class="eyebrow">SemanTok · Stability AI · 2026 · first author</span>
+        <h3>Predictable Semantic Tokens for Efficient Autoregressive Video Generation</h3>
+        <p class="authors"><span class="me">Mikhail Dereviannykh</span>, Vikram Voleti, Simon Donné, Mallikarjun B. R. Reddy, Shimon Vainer, Mark Boss</p>
+        <p>Video world models such as NVIDIA's Cosmos Predict use fixed-length tokenizers, spending the same number of tokens on a static shot as on a busy scene. SemanTok makes video tokens flexible and meaning-first: every token prefix already carries what the clip shows, so a generator can stop early and stay faithful.</p>
+        <div class="nums">
+          <span class="num"><b>47×</b> smaller model, better semantic alignment</span>
+          <span class="num"><b>3.4×</b> smaller model, same or better video fidelity</span>
+          <span class="num"><b>+11–24%</b> image fidelity at equal size</span>
+        </div>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2610.00686">Paper</a>
+          <a href="https://semantoken.github.io/">Project page</a>
+          <a href="https://github.com/Stability-AI/SemanTok">Code</a>
+          <a href="https://huggingface.co/StabilityLabs/SemanTok">Models</a>
+        </div>
+      </article>
+    </section>
+
+    <section aria-labelledby="h-research">
+      <h2 id="h-research">Selected research</h2>
+      <div class="list">
+        <div class="row media">
+          <span class="when">2026</span>
+          <div>
+            <h4>Efficient Validation for LLM-Generated Rendering Optimizations</h4>
+            <p class="meta"><span class="me">M. Dereviannykh</span>, D. Klepikov, H. Brucker, D. Wüst, B. Krimmel, R. Dolp, C. Dachsbacher · KIT</p>
+            <p>LLM-driven evolutionary search finds shader and render-pass speedups (up to 2.19×); a Bayesian sequential test proves them safe with 47–85% fewer validation frames. Basis for Acc3D.</p>
+            <div class="lk"><a href="https://renderopt.github.io/">Project page</a><span style="color:var(--muted)">Paper soon</span></div>
+          </div>
+          <figure class="thumb"><img src="images/renderopt.jpg" data-fallback="https://renderopt.github.io/static/videos/overview_poster.jpg" alt="RenderOpt: original, optimized and FLIP error views" loading="lazy"></figure>
+        </div>
+        <div class="row media">
+          <span class="when">2026</span>
+          <div>
+            <h4>Tabula Rasa: Monte Carlo Estimation of Unit-Variance Noise with Controlled Spatio-Temporal Correlation</h4>
+            <p class="meta">T. Ritschel, Y. Zhou, N. Milef, <span class="me">M. Dereviannykh</span>, C. Liu, C. Hery, C. Marshall · SIGGRAPH Asia 2026 · Meta</p>
+            <div class="lk"><span style="color:var(--muted)">To appear</span></div>
+          </div>
+          <figure class="thumb"><img src="images/tabula-rasa.jpg" data-fallback="https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72v8j-VUMQOL8BAx0aduGQ34nH0eSkDKVJMJGBnOcpLpCarGqR1f_ZLFedlssLTgjOEXLvQrmVdBxiV1I3BUlCTuP5-XRrY4eocbGDwhiBgoNbS_reBmLZmg3_36ebnrvBlSZcpezNCJEh_5A7WAd85Nezcpm5f-1iWqub7kI9BE1pHwa8n0BuGISACKkCAxzbndPGOjdqy9GwGcvH8JrEqYMLl-Yto8OYf-VksLfDA=w1280" alt="Tabula Rasa teaser" loading="lazy"></figure>
+        </div>
+        <div class="row media">
+          <span class="when">2026</span>
+          <div>
+            <h4>On Cosine Prior Distributions for Neural Path Guiding</h4>
+            <p class="meta">J.-L. Gutsch, <span class="me">M. Dereviannykh</span>, J. Hanika · Eurographics 2026</p>
+            <p>Light-transport priors help normalizing flows learn path-guiding distributions faster and more accurately. Supervised student project.</p>
+            <div class="lk"><a href="https://diglib.eg.org/items/3aa5971e-2086-440c-8762-0785398654ed">Paper</a></div>
+          </div>
+          <figure class="thumb"><img src="images/cosine-prior.jpg" data-fallback="https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vecaIWaSOHXeN3ppF6o9m5UkDzyOe4Yvgb5gChlnHVdHCFMJXsbueQUVV7XAqk4YckK2x88zDrhnF5ZTA_ZFzNJsv2JYcJKjMZ2CVO-yOIdz90JHhqtnN3Vu4DitKOpal4kK61-pYtn_clFI_UckS41B9vhsTpDCz1j2tSvBc44_B1SgFNQ5tCO9Osiiu4NlvJRk79Zb5O4qgFWuKtQ5Xum9JXymTNW5tfO1qC=w1280" alt="Neural path guiding teaser" loading="lazy"></figure>
+        </div>
+        <div class="row media">
+          <span class="when">2025</span>
+          <div>
+            <h4>Neural Two-Level Monte Carlo Real-Time Rendering <span class="badge">Best Paper HM</span></h4>
+            <p class="meta"><span class="me">M. Dereviannykh</span>, D. Klepikov, J. Hanika, C. Dachsbacher · Eurographics 2025, CGF · invited to SIGGRAPH 2025</p>
+            <p>Neural Incident Radiance Cache: integrate over a network instead of tracing paths, kept unbiased with two-level Monte Carlo. Trains faster than neural control variates and saves ray-tracing work.</p>
+            <div class="lk"><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.70050">Paper</a><a href="https://mishok43.github.io/nirc/">Project page</a><a href="https://s2025.conference-schedule.org/presentation/?id=thea_106&amp;sess=sess338">SIGGRAPH talk</a></div>
+          </div>
+          <figure class="thumb"><img src="images/nirc.jpg" data-fallback="https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72uVMRmrXPVz08oR9Tnm7Z07V9sSWUaQVzC_kvvBjnD_hBvh78NL87myXydxLd9jurh2UxbxZU6PdnsdArMl3FDxhIBfk9G0ZUKltIcGtqiUCP_H6RqFh_pcOihYh34pzgMU7x97cbuhnXJ9cxssr8oWXdNfzuAk7LNoN-hCqbojGQApMX3br-9ZedBj23gjWhUkUMVDoPQjaPh1dbtJer-Cd4Y2QLx0OxQP2h_yMLM=w1280" alt="NIRC teaser" loading="lazy"></figure>
+        </div>
+        <div class="row media">
+          <span class="when">2022</span>
+          <div>
+            <h4>Real-Time Path Guiding Based on Parametric Mixture Model</h4>
+            <p class="meta"><span class="me">M. Derevyannykh</span> · Eurographics 2022</p>
+            <p>First lightweight screen-space path guiding for real time: 4× lower FLIP at 1 spp, under 1.5 ms at 1080p on an RTX 2070.</p>
+            <div class="lk"><a href="https://drive.google.com/file/d/1ib56JTw1HracX9KGyXZ4cNolGmvuvmMQ/view?usp=sharing">Paper</a><a href="https://drive.google.com/file/d/1dcIYA-Bc0TRvujwH7h_HjeKaxAdYhOIu/view?usp=sharing">Talk</a></div>
+          </div>
+          <figure class="thumb"><img src="images/path-guiding.jpg" data-fallback="https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72u1miS4PBal4JAaeNrSQ0NpfgD_hDKPiZ3kssay6tgE_FiEFzwAdqgL-OYOXWY5m4XGV1WfaPFy5FxHJ6wFYhs7f-u25RjVTFb962VtLIq19SezImnVuXMqwDOYN_MX3cLN9j6uanGFuhKGWvX6Gc5MP6IIiEfVZ7H3SfVrUTNudpAhmFaLc2LmZwn8ynl5yC2y7K9pRtDreDrJP36qa2pLfeIm2v1P72cCq83UMDk=w1280" alt="Real-time path guiding teaser" loading="lazy"></figure>
+        </div>
+        <div class="row media">
+          <span class="when">2021</span>
+          <div>
+            <h4>Stochastic Spherical Gaussian Radiance Volumes for Production Real-Time Rendering</h4>
+            <p class="meta"><span class="me">M. Derevyannykh</span> · Technical report</p>
+            <p>Precomputed light volumes with stochastically filtered spherical Gaussians, visibility weighting against leaks, and improved Fresnel and masking terms under SG lighting.</p>
+            <div class="lk"><a href="https://drive.google.com/file/d/1lKNQv9R01mbm9ch4oX--dlWUnlD7Uwdn/view?usp=sharing">Report</a><a href="https://www.youtube.com/watch?v=dDumo0oVNgc">Video [Sponza]</a><a href="https://drive.google.com/file/d/1rHg4dAcc0HYQUog91FXbQ8uyitOoZrlf/view?usp=sharing">Video [Cockpit]</a></div>
+          </div>
+          <figure class="thumb"><img src="images/sg-volumes.jpg" data-fallback="https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tACh99K4S-Mq-NBpLhdNf2xKgIoq5WZ5e7ettELN2MVov0am1g3qDPRjZKiS7Muscz0hoeFjJs1qSw169b07JDxKk1heWnFq_af0ks1396aKL3bzIfOiEn9C6XQLj_At4WUEK5aUG9_j0_q6E8DwcH3D-2RhrE5KtyX0rlBpE89jH1g6_RRRjUCCNdF57j2QXT-tJmiD7A-Gtgj_3wzdjdowxfshFsqZPFsC1UfTQ=w1280" alt="Spherical Gaussian radiance volumes in Sponza" loading="lazy"></figure>
+        </div>
+        <div class="row media">
+          <span class="when">2020</span>
+          <div>
+            <h4>Neural Lightmaps and Light Volumes for Static Scenes</h4>
+            <p class="meta"><span class="me">M. Derevyannykh</span> · University project</p>
+            <p>CNNs predict a lightmap or SG light volume from dynamic light inputs in one feed-forward pass: about 1 ms on an RTX 2060.</p>
+            <div class="lk"><a href="https://www.youtube.com/watch?v=hEFK4dvytrY">Video</a></div>
+          </div>
+          <figure class="thumb"><img src="images/neural-lightmaps.jpg" alt="Neural lightmap prediction in a Sponza-like scene" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-exp">
+      <h2 id="h-exp">Experience</h2>
+      <div class="list">
+        <div class="row"><span class="when">2026–</span><div><h4>Physical AI &amp; World Models</h4><p class="meta">Stealth</p></div></div>
+        <div class="row"><span class="when">2026</span><div><h4>Research Scientist, World Models · Stability AI</h4><p class="meta">Internship. Neural Rendering and World Models</p></div></div>
+        <div class="row media"><span class="when">2025</span><div><h4>Founder &amp; CEO, Acc3D</h4><p class="meta">Turned RenderOpt research into a product: automatic, verified GPU shader optimization for game engines and 3D content pipelines</p></div><figure class="thumb" style="background:#fff"><img src="images/acc3d.png" alt="Acc3D logo" loading="lazy" style="object-fit:contain"></figure></div>
+        <div class="row"><span class="when">2025–26</span><div><h4>Research Scientist, World Models · Meta Reality Labs</h4><p class="meta">Internship, Redmond, USA. Neural Rendering and World Models</p></div></div>
+        <div class="row"><span class="when">2022–26</span><div><h4>PhD Researcher · Karlsruhe Institute of Technology</h4><p class="meta">Computer Graphics group, Prof. Carsten Dachsbacher. Thesis defense pending. Supervised student projects; designed exam sections for Computergrafik.</p></div></div>
+        <div class="row"><span class="when">2021–22</span><div><h4>Researcher · MSU Graphics &amp; Media Lab</h4><p class="meta">Real-time global illumination and neural graphics</p></div></div>
+        <div class="row media"><span class="when">2018–22</span><div><h4>Senior R&amp;D Graphics Engineer · Eagle Dynamics</h4><p class="meta">DCS World flight simulator. Neural real-time GI with 0.1 ms updates, PBR volumetrics, VFX and particle editor, engine profiling with Nsight and VTune</p><div class="lk"><a href="https://youtu.be/OA49DDZ13LA?t=98">Video</a><a href="https://store.steampowered.com/app/223750/DCS_World_Steam_Edition/">Steam</a></div></div><figure class="thumb"><img src="images/dcs-world.jpg" data-fallback="https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vxxHtoF-v6c8sGgE63XAVwc_HmvCDKakrhoYzfXSHTm2EWEpXYafkSfrpi5aexuZPIpIRr2G_sI9rAjpjcJTr-ReHWe6-qNz2pEJFLOh0V5C6u8pZEplWKSzCr1usaQhmlCPm37PZT-UnEbGXzn8a9vl87Nn76lxUGCtOkADSW1lYPSB1KORnKK12aOQ70VSjxrpnlSzT1FEu7cpgYBLwiQ0_pVYJ6auufZq0DbYE=w1280" alt="DCS World visual effects" loading="lazy"></figure></div>
+        <div class="row media"><span class="when">2015–17</span><div><h4>Founder · WellDone Games</h4><p class="meta">Independent mobile game studio. Shipped Hungry Jump on Android: 100 levels, AI-driven creatures, data pipeline over 1M+ logic cells</p><div class="lk"><a href="https://www.youtube.com/watch?v=b2wEjzxaLWk">Video</a></div></div><figure class="thumb"><img src="images/hungry-jump.jpg" data-fallback="https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72t8GfHvU2AXEWYe5-Id2d3yd3mk9pTrH6hZVJTiWUzYZBssLBzXyBmS9RuJvmiM7Q9weuEhvqkPiJnUU9EPopdfROToD2H8WEWO1XkkhT5iZ7GItDo7F-3o_2jQyhNat81LcEyhQQudmTijDly_K7HLjSjSR7Hb2IGIk1AlO9jDbaP2uXEzGh1U8ZJ8CkHu1OW27mjN-xx4wBp2zhCFwE63hNZ9OGujWOR1Dd-I9iw=w1280" alt="Hungry Jump gameplay" loading="lazy"></figure></div>
+      </div>
+    </section>
+
+    <section class="two" aria-label="Recognition and talks">
+      <div>
+        <h2>Recognition</h2>
+        <ul class="compact">
+          <li><span class="when">2025</span><span>Best Paper Honorable Mention, Eurographics</span></li>
+          <li><span class="when">2025</span><span>Invited presentation, SIGGRAPH (from CGF)</span></li>
+          <li><span class="when">2025</span><span>Meshy Fellowship, Outstanding Prize</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Talks</h2>
+        <ul class="compact">
+          <li><span class="when">2025</span><span>Neural Two-Level Monte Carlo Rendering · SIGGRAPH, Eurographics</span></li>
+          <li><span class="when">2022</span><span>Real-Time Neural Graphics · Intel GPU Research</span></li>
+          <li><span class="when">2022</span><span>Real-Time Path Guiding · Eurographics</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-people">
+      <h2 id="h-people">Proudly worked with</h2>
+      <p class="people"><span>Tobias Ritschel</span> (UCL), <span>Anton Kaplanyan</span> (Meta, NVIDIA, Intel), <span>Dario Seyb</span> (Meta, Valve), <span>Carsten Dachsbacher</span> (KIT), <span>Johannes Hanika</span> (KIT, Weta Digital), <span>Mark Boss</span> and <span>Shimon Vainer</span> (Stability AI, Unity), and many others.</p>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Mikhail Dereviannykh</span><span>mishok43.com</span></footer>
+</div>
+
+<script>
+(function(){
+  // Local images in /images first; if missing, fall back to the original hosted copy; if that fails too, hide the frame.
+  function fail(img){
+    var fb=img.getAttribute('data-fallback');
+    if(fb&&img.src.indexOf(fb)===-1){img.src=fb;return;}
+    var f=img.closest('figure'); if(f) f.hidden=true;
+  }
+  document.querySelectorAll('img[data-fallback]').forEach(function(img){
+    img.addEventListener('error',function(){fail(img);});
+    if(img.complete&&img.naturalWidth===0) fail(img);
+  });
+})();
+</script>
+
+</body>
+</html>

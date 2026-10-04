@@ -97,6 +97,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--rule)}
 .row{display:grid;grid-template-columns:76px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--rule)}
 .row:first-child{border-top:0;padding-top:0}
 .row .when{font-family:var(--f-mono);font-size:0.76rem;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.row h4 .logo{height:2.1em;width:auto;vertical-align:middle;margin-left:10px;position:relative;top:-2px}
 .row h4{font-family:var(--f-display);font-weight:600;font-size:var(--step-1);margin:0 0 3px;line-height:1.3;text-wrap:balance}
 .row .meta{font-family:var(--f-display);font-size:0.84rem;color:var(--muted);margin:0 0 6px}
 .row .meta .me{color:var(--ink);font-weight:600}
@@ -177,7 +178,7 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:16px;font-f
             <p>LLM-driven evolutionary search finds shader and render-pass speedups (up to 2.19×); a Bayesian sequential test proves them safe with 47–85% fewer validation frames. Basis for Acc3D.</p>
             <div class="lk"><a href="https://renderopt.github.io/">Project page</a><span style="color:var(--muted)">Paper soon</span></div>
           </div>
-          <figure class="thumb"><img src="images/renderopt.jpg" data-fallback="https://renderopt.github.io/static/videos/overview_poster.jpg" alt="RenderOpt: original, optimized and FLIP error views" loading="lazy"></figure>
+          <figure class="thumb"><img src="images/renderopt.gif" data-fallback="https://renderopt.github.io/static/videos/overview_poster.jpg" alt="RenderOpt: original vs. ours, 1.69× faster" loading="lazy"></figure>
         </div>
         <div class="row media">
           <span class="when">2026</span>
@@ -196,7 +197,7 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:16px;font-f
             <p>Light-transport priors help normalizing flows learn path-guiding distributions faster and more accurately. Supervised student project.</p>
             <div class="lk"><a href="https://diglib.eg.org/items/3aa5971e-2086-440c-8762-0785398654ed">Paper</a></div>
           </div>
-          <figure class="thumb"><img src="images/cosine-prior.jpg" data-fallback="https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vecaIWaSOHXeN3ppF6o9m5UkDzyOe4Yvgb5gChlnHVdHCFMJXsbueQUVV7XAqk4YckK2x88zDrhnF5ZTA_ZFzNJsv2JYcJKjMZ2CVO-yOIdz90JHhqtnN3Vu4DitKOpal4kK61-pYtn_clFI_UckS41B9vhsTpDCz1j2tSvBc44_B1SgFNQ5tCO9Osiiu4NlvJRk79Zb5O4qgFWuKtQ5Xum9JXymTNW5tfO1qC=w1280" alt="Neural path guiding teaser" loading="lazy"></figure>
+          <figure class="thumb"><img src="images/cosine-prior.gif" data-fallback="https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vecaIWaSOHXeN3ppF6o9m5UkDzyOe4Yvgb5gChlnHVdHCFMJXsbueQUVV7XAqk4YckK2x88zDrhnF5ZTA_ZFzNJsv2JYcJKjMZ2CVO-yOIdz90JHhqtnN3Vu4DitKOpal4kK61-pYtn_clFI_UckS41B9vhsTpDCz1j2tSvBc44_B1SgFNQ5tCO9Osiiu4NlvJRk79Zb5O4qgFWuKtQ5Xum9JXymTNW5tfO1qC=w1280" alt="Neural path guiding teaser" loading="lazy"></figure>
         </div>
         <div class="row media">
           <span class="when">2025</span>
@@ -228,7 +229,7 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:16px;font-f
           </div>
           <figure class="thumb"><img src="images/sg-volumes.jpg" data-fallback="https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tACh99K4S-Mq-NBpLhdNf2xKgIoq5WZ5e7ettELN2MVov0am1g3qDPRjZKiS7Muscz0hoeFjJs1qSw169b07JDxKk1heWnFq_af0ks1396aKL3bzIfOiEn9C6XQLj_At4WUEK5aUG9_j0_q6E8DwcH3D-2RhrE5KtyX0rlBpE89jH1g6_RRRjUCCNdF57j2QXT-tJmiD7A-Gtgj_3wzdjdowxfshFsqZPFsC1UfTQ=w1280" alt="Spherical Gaussian radiance volumes in Sponza" loading="lazy"></figure>
         </div>
-        <div class="row media">
+        <div class="row">
           <span class="when">2020</span>
           <div>
             <h4>Neural Lightmaps and Light Volumes for Static Scenes</h4>
@@ -236,7 +237,6 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:16px;font-f
             <p>CNNs predict a lightmap or SG light volume from dynamic light inputs in one feed-forward pass: about 1 ms on an RTX 2060.</p>
             <div class="lk"><a href="https://www.youtube.com/watch?v=hEFK4dvytrY">Video</a></div>
           </div>
-          <figure class="thumb"><img src="images/neural-lightmaps.jpg" alt="Neural lightmap prediction in a Sponza-like scene" loading="lazy"></figure>
         </div>
       </div>
     </section>
@@ -246,7 +246,7 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:16px;font-f
       <div class="list">
         <div class="row"><span class="when">2026–</span><div><h4>Physical AI &amp; World Models</h4><p class="meta">Stealth</p></div></div>
         <div class="row"><span class="when">2026</span><div><h4>Research Scientist, World Models · Stability AI</h4><p class="meta">Internship. Neural Rendering and World Models</p></div></div>
-        <div class="row media"><span class="when">2025</span><div><h4>Founder &amp; CEO, Acc3D</h4><p class="meta">Turned RenderOpt research into a product: automatic, verified GPU shader optimization for game engines and 3D content pipelines</p></div><figure class="thumb" style="background:#fff"><img src="images/acc3d.png" alt="Acc3D logo" loading="lazy" style="object-fit:contain"></figure></div>
+        <div class="row"><span class="when">2025</span><div><h4>Founder &amp; CEO, Acc3D<img src="images/acc3d.png" alt="Acc3D logo" class="logo"></h4><p class="meta">Turned RenderOpt research into a product: automatic, verified GPU shader optimization for game engines and 3D content pipelines</p></div></div>
         <div class="row"><span class="when">2025–26</span><div><h4>Research Scientist, World Models · Meta Reality Labs</h4><p class="meta">Internship, Redmond, USA. Neural Rendering and World Models</p></div></div>
         <div class="row"><span class="when">2022–26</span><div><h4>PhD Researcher · Karlsruhe Institute of Technology</h4><p class="meta">Computer Graphics group, Prof. Carsten Dachsbacher. Thesis defense pending. Supervised student projects; designed exam sections for Computergrafik.</p></div></div>
         <div class="row"><span class="when">2021–22</span><div><h4>Researcher · MSU Graphics &amp; Media Lab</h4><p class="meta">Real-time global illumination and neural graphics</p></div></div>

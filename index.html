@@ -60,7 +60,8 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
 .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .row.media{grid-template-columns:76px minmax(0,1fr) 190px}
 @media (max-width:640px){.row.media{grid-template-columns:76px minmax(0,1fr)}.row.media .thumb{grid-column:2;max-width:320px}}
-.feature .thumb{aspect-ratio:21/9}
+.feature .thumb{aspect-ratio:auto}
+.feature .thumb img{height:auto}
 h1{font-family:var(--f-display);font-weight:700;font-size:var(--step-3);line-height:1.05;letter-spacing:-0.02em;margin:0;text-wrap:balance}
 h1 small{display:block;font-size:0.95rem;font-weight:500;letter-spacing:0;color:var(--muted);margin-top:8px}
 .thesis{font-family:var(--f-display);font-size:var(--step-1);font-weight:500;line-height:1.4;margin:0;text-wrap:pretty}
@@ -142,7 +143,7 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:16px;font-f
   <main>
     <section class="intro" aria-label="About">
       <p>I work where simulation research meets real products. My first company was WellDone Games, a small mobile game studio. After that I spent four years shipping real-time rendering for DCS World, a flight simulator played by hundreds of thousands of people, and then did my PhD research at KIT on neural rendering (thesis defense still ahead), where my work earned a Best Paper Honorable Mention at Eurographics 2025.</p>
-      <p>Since then I've done research at Meta Reality Labs and Stability AI on generative video and world models, and founded Acc3D around AI-driven rendering optimization for game engines. I feel most excited about ideas that leave the paper and survive real constraints: a few milliseconds per frame, a fixed GPU budget, a team that has to ship next month.</p>
+      <p>Since then I've worked on generative video and world models at Meta Reality Labs and Stability AI, and founded Acc3D, which turned my rendering research into a product for game engines. Now I build world models for physical AI: systems that learn how the world looks and behaves, so robots and simulators can be trained and tested at scale instead of in hand-built scenes. What drives me is real impact: models that leave the paper, run in real time and get used.</p>
     </section>
 
     <section aria-labelledby="h-featured">

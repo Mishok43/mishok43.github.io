@@ -91,7 +91,7 @@ h2::after{content:"";flex:1;height:1px;background:var(--rule)}
 /* Featured venture */
 .feature{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:clamp(18px,3vw,28px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 26px;align-items:start}
 .ftext{display:flex;flex-direction:column;gap:11px;min-width:0}
-.fbottom{grid-column:1/-1;display:flex;flex-direction:column;gap:12px}
+.clipfig .nums{margin-top:10px}
 @media (max-width:820px){.feature{grid-template-columns:minmax(0,1fr)}.clipfig{max-width:420px}}
 .feature .eyebrow{font-family:var(--f-mono);font-size:0.72rem;color:var(--accent);letter-spacing:0.04em}
 .feature h3{font-family:var(--f-display);font-size:var(--step-2);font-weight:700;margin:0;line-height:1.2;text-wrap:balance}
@@ -165,6 +165,12 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:16px;font-f
         <h3>Predictable Semantic Tokens for Efficient Autoregressive Video Generation</h3>
         <p class="authors"><span class="me">Mikhail Dereviannykh</span>, Vikram Voleti, Simon Donné, Mallikarjun B. R. Reddy, Shimon Vainer, Mark Boss</p>
         <p>Video world models such as NVIDIA's Cosmos Predict use fixed-length tokenizers, spending the same number of tokens on a static shot as on a busy scene. SemanTok makes video tokens flexible and meaning-first: every token prefix already carries what the clip shows, so a generator can stop early and stay faithful.</p>
+        <div class="actions">
+          <a href="https://arxiv.org/abs/2610.00686">Paper</a>
+          <a href="https://semantoken.github.io/">Project page</a>
+          <a href="https://github.com/Stability-AI/SemanTok">Code</a>
+          <a href="https://huggingface.co/StabilityLabs/SemanTok">Models</a>
+        </div>
         </div>
         <!-- Static thumbnail for when SemanTok moves to Selected research: images/semantok.jpg -->
         <figure class="clipfig">
@@ -177,20 +183,12 @@ footer{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:16px;font-f
             <video src="videos/semantok-basketball.mp4" poster="videos/semantok-basketball.jpg" width="524" height="392" autoplay muted loop playsinline preload="metadata" aria-label="Text-to-video samples at 4, 16, 64 and 256 tokens per frame: VideoFlexTok 201M and 2.29B versus SemanTok 201M"></video>
           </div>
           <figcaption><b style="color:#d9711c">VideoFlexTok</b> vs. <b style="color:#6b4fbb">SemanTok</b> on &ldquo;A small orange basketball on a plaid tablecloth&rdquo;: SemanTok keeps the ball's shape from 4 tokens per frame.</figcaption>
-        </figure>
-        <div class="fbottom">
-        <div class="nums">
+          <div class="nums">
           <span class="num"><b>47×</b> smaller model, better semantic alignment</span>
           <span class="num"><b>3.4×</b> smaller model, same or better video fidelity</span>
           <span class="num"><b>+11–24%</b> image fidelity at equal size</span>
         </div>
-        <div class="actions">
-          <a href="https://arxiv.org/abs/2610.00686">Paper</a>
-          <a href="https://semantoken.github.io/">Project page</a>
-          <a href="https://github.com/Stability-AI/SemanTok">Code</a>
-          <a href="https://huggingface.co/StabilityLabs/SemanTok">Models</a>
-        </div>
-        </div>
+        </figure>
       </article>
     </section>
 
